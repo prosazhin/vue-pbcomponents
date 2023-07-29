@@ -1,0 +1,86 @@
+{
+  "name": "vue-pbcomponents",
+  "version": "0.0.1",
+  "repository": "git@github.com:prosazhin/vue-pbcomponents.git",
+  "author": "Evgenii Sazhin <prosazhin@gmail.com> (https://prosazhin.ru)",
+  "license": "MIT",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:lib\" \"npm run dev:storybook\"",
+    "build": "npm run build:lib && npm run build:storybook",
+    "dev:lib": "vite build --watch",
+    "build:lib": "vue-tsc && vite build",
+    "dev:storybook": "storybook dev -p 6006 --docs",
+    "build:storybook": "storybook build",
+    "lint": "vue-tsc --noEmit && eslint src",
+    "lint:fix": "eslint --fix src --ext .ts,.vue",
+    "lint:markup": "vue-tsc --noEmit",
+    "format": "prettier --write src",
+    "prepare": "husky install"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.1.1",
+    "@storybook/addon-interactions": "^7.1.1",
+    "@storybook/addon-links": "^7.1.1",
+    "@storybook/blocks": "^7.1.1",
+    "@storybook/testing-library": "^0.2.0",
+    "@storybook/vue3": "^7.1.1",
+    "@storybook/vue3-vite": "^7.1.1",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.4",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^20.4.5",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-typescript": "^11.0.3",
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.16.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "pbstyles": "^1.2.1",
+    "postcss": "^8.4.27",
+    "prettier-plugin-tailwindcss": "^0.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.1.1",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.7",
+    "vite-plugin-css-injected-by-js": "^3.2.1",
+    "vite-plugin-dts": "^3.3.1",
+    "vue-eslint-parser": "^9.3.1",
+    "vue-tsc": "^1.8.8"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,vue}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "src/**/*.{md,mdx}": [
+      "prettier --write"
+    ],
+    "stories/**/*.{md,mdx}": [
+      "prettier --write"
+    ]
+  }
+}

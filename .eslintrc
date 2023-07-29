@@ -1,0 +1,46 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["plugin:vue/vue3-recommended", "eslint:recommended", "@vue/typescript/recommended", "prettier", "@vue/prettier"],
+  "plugins": ["@typescript-eslint", "prettier"],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": 2021
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "vueIndentScriptAndStyle": false
+      }
+    ],
+    "curly": "error",
+    "no-shadow": "error",
+    "no-nested-ternary": "error",
+    "newline-before-return": "error",
+    "object-shorthand": "error",
+    "spaced-comment": "error",
+    "quotes": ["error", "single"],
+    "no-duplicate-imports": "error",
+    "no-console": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+    "vue/script-indent": "off",
+    "vue/no-multiple-template-root": "off",
+    "vue/multi-word-component-names": "off"
+  }
+}
