@@ -1,6 +1,6 @@
 import { App } from 'vue';
-import * as components from './components';
-import './assets/index.css';
+import * as components from '@/components';
+import '@/assets/index.css';
 
 export default {
   install: (app: App) => {
