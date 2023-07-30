@@ -5,20 +5,16 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["plugin:vue/vue3-recommended", "eslint:recommended", "@vue/typescript/recommended", "prettier", "@vue/prettier"],
-  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": ["plugin:vue/vue3-recommended", "eslint:recommended", "@vue/typescript/recommended", "@vue/prettier", "plugin:prettier/recommended", "plugin:tailwindcss/recommended"],
+  "plugins": ["@typescript-eslint", "prettier", "tailwindcss"],
   "parser": "vue-eslint-parser",
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
     "ecmaVersion": 2021
   },
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "vueIndentScriptAndStyle": false
-      }
-    ],
+    "prettier/prettier": "off",
+    "tailwindcss/classnames-order": "off",
     "curly": "error",
     "no-shadow": "error",
     "no-nested-ternary": "error",
